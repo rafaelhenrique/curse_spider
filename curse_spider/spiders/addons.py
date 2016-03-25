@@ -11,7 +11,7 @@ class AddonsSpider(scrapy.Spider):
     def parse(self, response):
         link = response.xpath(
             r'//*[@id="file-download"]'
-            r'/div/div[2]/div/div/div[1]'
-            r'/p/a/@data-href').extract_first()
+            r'/div[1]/p/a'
+            r'/@data-href').extract_first()
 
         return {"url": link}
