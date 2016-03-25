@@ -1,4 +1,4 @@
-# Curse client for Mac/Linux/Wherever
+# Curse client for Mac/Linux/Others
 
 This project was created to download the World of Warcraft addons in an automated way.
 Without using curse client \o/
