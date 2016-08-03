@@ -18,4 +18,5 @@ MY_ADDONS = (
         "http://www.curse.com/addons/wow/tellmewhen/download",
         "http://www.curse.com/addons/wow/tomtom/download",
         "http://www.curse.com/addons/wow/deadly-boss-mods/download",
+        "http://www.curse.com/addons/wow/weakauras-2/download",
 )
