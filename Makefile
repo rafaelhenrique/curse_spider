@@ -7,5 +7,8 @@ clean:
 run: clean
 	scrapy crawl addons
 
+extract:
+	cd out/full && find . -iname "*.zip" -exec unzip -o {} \;
+
 requirements:
 	pip install -r requirements.txt
