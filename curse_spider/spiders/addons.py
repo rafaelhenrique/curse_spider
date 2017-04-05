@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from curse_spider.my_addons import MY_ADDONS
+from curse_spider.items import UrlItem
 
 
 class AddonsSpider(scrapy.Spider):
@@ -9,9 +10,11 @@ class AddonsSpider(scrapy.Spider):
     start_urls = MY_ADDONS
 
     def parse(self, response):
-        link = response.xpath(
+        url = response.xpath(
             r'//*[@id="file-download"]'
             r'/div[1]/p/a'
             r'/@data-href').extract_first()
 
-        return {"url": link}
+        item = UrlItem()
+        item['url'] = url
+        return item
