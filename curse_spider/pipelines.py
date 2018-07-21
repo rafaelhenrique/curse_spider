@@ -9,9 +9,9 @@ from scrapy.exceptions import DropItem
 class AddonsPipeline(FilesPipeline):
 
     def handle_redirect(self, url):
-        response = requests.head(url)
-        if response.status_code == 302:
-            url = response.headers.get("Location")
+        response = requests.get(url)
+        if response.status_code == 200:
+            url = response.url
         return url
 
     def get_media_requests(self, item, info):

@@ -10,11 +10,11 @@ class AddonsSpider(scrapy.Spider):
     start_urls = MY_ADDONS
 
     def parse(self, response):
+        base_url = 'https://www.curseforge.com'
         url = response.xpath(
-            r'//*[@id="file-download"]'
-            r'/div[1]/p/a'
-            r'/@data-href').extract_first()
+            r'//*[@class="download__link"]'
+            r'/@href').extract_first()
 
         item = UrlItem()
-        item['url'] = url
+        item['url'] = base_url + url
         return item
